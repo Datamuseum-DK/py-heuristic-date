@@ -102,6 +102,10 @@ def interpret(instr):
     Try to interpret instr as a date, return as much of "YYYY-[MM[-DD]]" as we can.
     '''
 
+    instr = instr.strip()
+    if not instr:
+        return None
+
     year = None
     month = None
     day = None
