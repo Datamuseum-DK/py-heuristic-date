@@ -183,7 +183,10 @@ def interpret(instr):
             match = regex.search(l[n])
             if match is None:
                 continue
-            if first_match is None or match.span() < first_match.span():
+            span = match.span()
+            if l[n][span[1]].isalpha():
+                continue
+            if first_match is None or span < first_match.span():
                 first_match = match
                 first_mon_id = mon_id
         if first_match is None:
