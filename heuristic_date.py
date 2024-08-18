@@ -184,7 +184,7 @@ def interpret(instr):
             if match is None:
                 continue
             span = match.span()
-            if l[n][span[1]].isalpha():
+            if (l[n]+" ")[span[1]].isalpha():
                 continue
             if first_match is None or span < first_match.span():
                 first_match = match
