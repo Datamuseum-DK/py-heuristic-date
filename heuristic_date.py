@@ -156,7 +156,7 @@ def interpret(instr):
             break
 
         if year is None and len(x) == 4 and is_y2k(x[:2]) and is_month(x[2:]):
-            year = int(x[:2])
+            year = int(x[:2]) + 1900
             month = int(x[2:])
             day = None
             break
